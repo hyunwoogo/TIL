@@ -10,7 +10,7 @@
 
 > Python 학습 내용 복습
 
-- [출력, 주석, 변수, 비교연산](https://github.com/hyunwoogo/TIL/blob/master/python/220203.md)
+- [출력, 주석, 변수, 비교연산](https://github.com/hyunwoogo/TIL/blob/master/python/220203.md)git
 
 #### 3. GIT
 
@@ -18,7 +18,7 @@
 
 - [1일차](https://github.com/hyunwoogo/TIL/blob/master/git/day01.md)
 - [2일차](https://github.com/hyunwoogo/TIL/blob/master/git/day02.md)
-- 3일차
+- [3일차](https://github.com/hyunwoogo/TIL/blob/master/git/day03.md)
 
 #### 4. 알고리즘 문제 (코딩테스트 대비)
 
