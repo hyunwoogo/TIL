@@ -16,6 +16,10 @@
 
 > GIT에 관한 기본적인 명령어, 조작법 정리 
 
+- [1일차](https://github.com/hyunwoogo/TIL/blob/master/git/day01.md)
+- [2일차](https://github.com/hyunwoogo/TIL/blob/master/git/day02.md)
+- 3일차
+
 #### 4. 알고리즘 문제 (코딩테스트 대비)
 
 > 하루에 한문제씩 해결 해보기!
