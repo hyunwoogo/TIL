@@ -10,7 +10,7 @@
 
 > Python 학습 내용 복습
 
-- [출력, 주석, 변수, 비교연산](https://github.com/hyunwoogo/TIL/blob/master/python/220203.md)git
+- [출력, 주석, 변수, 비교연산](https://github.com/hyunwoogo/TIL/blob/master/python/220203.md)
 
 #### 3. GIT
 
