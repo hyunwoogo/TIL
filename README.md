@@ -16,9 +16,9 @@
 
 > GIT에 관한 기본적인 명령어, 조작법 정리 
 
-- [1일차](https://github.com/hyunwoogo/TIL/blob/master/git/day01.md)
-- [2일차](https://github.com/hyunwoogo/TIL/blob/master/git/day02.md)
-- [3일차](https://github.com/hyunwoogo/TIL/blob/master/git/day03.md)
+- [chap.1](https://github.com/hyunwoogo/TIL/blob/master/git/day01.md)
+- [chap.2](https://github.com/hyunwoogo/TIL/blob/master/git/day02.md)
+- [chap.3](https://github.com/hyunwoogo/TIL/blob/master/git/day03.md)
 
 #### 4. 알고리즘 문제 (코딩테스트 대비)
 
