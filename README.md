@@ -10,7 +10,8 @@
 
 > Python 학습 내용 복습
 
-- [출력, 주석, 변수, 비교연산](https://github.com/hyunwoogo/TIL/blob/master/python/220203.md)
+- [기본문법](https://github.com/hyunwoogo/TIL/blob/master/python/python_strat.md)
+- [자료형](https://github.com/hyunwoogo/TIL/blob/master/python/daya_type.md)
 
 #### 3. GIT
 
