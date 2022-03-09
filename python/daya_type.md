@@ -282,7 +282,177 @@ print("I eat %d apples, so I was sick for %s days" % (number, day))
 # I eat 3 apples, so I was sick for three days 출력
 ```
 
+- format() 함수를 이용한 포매팅
+  - 기본예제
 
+   ```python
+   print("{} {} {}".format(11, 22, 33))	# "11 22 33" 출력
+   ```
+  
+  - 순서를 이용한 포매팅 예제
+  
+  ```python
+  number = 3
+  day = "three"
+  print("I eat {1} apples, so I was sick for {0} days".format(number, day))
+  # 첫 번째 {}에서 1번자리(day)를 호출하고 두 번째 {}에서 0번자리(number)를 호출
+  # "I eat three apples, so I was sick for 3 days" 출력
+  ```
+  
+  - 변수 이름을 이용한 포매팅 예제
+  
+  ```python
+  print("I eat {number} apples, so I was sick for {day} days".format(number=10, days=3))
+  # "I eat 10 apples, so I was sick for 3 days" 출력
+  ```
+  
+- f문자열 포매팅
+
+  - 예제
+
+  ```python
+  name = "홍길동"
+  age = 19
+  print(f"나의 이름은 {name}입니다. 나이는 {age}입니다.")
+  
+  # "나의 이름은 홍길동입니다. 나이는 19입니다" 출력
+  
+  name = "홍길동"
+  age = 19
+  print(f"나의 이름은 {name}입니다. 나이는 {age+1}입니다.")
+  
+  # "나의 이름은 홍길동입니다. 나이는 20입니다" 출력
+  
+  ```
+
+  
+
+
+
+
+
+8. 문자열 표현(정렬/공백/소수점 자리수)
+
+- 정렬/공백 예제
+
+```python
+print("%s" % "hi")	# "hi" 출력
+
+print("%10s" % "hi")	# 자리수를 10칸을 만들어 오른쪽자리부터 "hi"가 들어가고 남겨진 자리수는 공백으로 채움 : "        hi" 출력
+
+print("%-10s" %"hi")	# 위 처럼 10자리를 만든 후 왼쪽자리부터 문자열이 들어감('-' 부호 유무 차이) : "hi        " 출력
+
+```
+
+- 문자열 공백 지우기(stirip)
+
+```python
+# strip() 함수를 사용해 문자열 공백을 지울수 있음
+
+a = "  hi  "
+print(a.strip())	# "hi" 출력
+
+# 왼쪽만 지우고 싶을때
+a = "  hi  "
+print(a.lstrip())	# "hi  " 출력
+
+# 오른쪽만 지우고 싶을때
+a = "  hi  "
+print(a.rstrip())	# "  hi" 출력
+```
+
+
+
+9. 문자열 갯수 세기/ 위치 알려주기/ 삽입/ 대,소문자 바꾸기/ 나누기
+
+- 문자열 갯수 세기(count)
+
+```python
+a = "hobby"
+print(a.count("b"))	# 2출력
+```
+
+- 문자열 위치 알려주기
+
+  - 첫 번째 방법(find)
+
+  ```python
+  a = "Python is the best choice"
+  print(a.find("b"))	# 문자열 중 b가 처음 나온 위치를 반환
+  					# 14 출력
+  ```
+
+  ```python
+  a = "Python is the best choice"
+  print(a.find("ㅓ"))	# -1 출력(위에 문자열에 존재하지 않으면 -1 출력)
+  ```
+
+  - 두 번째 방법(index)
+
+  ```python
+  a = "Life is too short"
+  print(a.index("t"))	# 8 출력
+  ```
+
+  ```python
+  a = "Life is too short"
+  print(a.index("j"))	# 에러 발생
+  					# find와 index의 가장 큰 차이점은 문자열에 문자가 없을 경우 index는 에러 발생 find는 -1 출력
+  ```
+
+- 문자열 삽입(join)
+
+  - join() 함수의 입력으로 리스트 사용 가능
+
+```python
+a = " , "
+print(a.join(abcd))	# "a , b , c , d" 출력
+
+a = ":"
+print(a.join("a", "b", "c", "d"))	# "a:b:c:d" 출력
+```
+
+
+
+- 문자열 대, 소문자 바꾸기(upper, lower)
+
+  - 소문자 -> 대문자 (upper)
+
+  ```python
+  a = "hi"
+  print(a.upper())	# "HI"출력
+  ```
+
+  - 대문자 -> 소문자 (lower)
+
+  ```python
+  a = "HI"
+  print(a.lower())
+  ```
+
+
+
+- 문자열 나누기(split)
+
+  - split() 함수는 괄호 안에 아무것도 넣어 주지 않을 경우 공백을 기준으로 나눔
+  - split() 함수의 괄호 안에 특정 값이 있는 경우 그 값을 기준으로 나눔
+  - 예제
+
+  ```python
+  a = "Life is too short"
+  print(a.split())
+  
+  # ['Life', 'is', 'too', 'short'](리스트형태)로 출력
+  ```
+
+  ```python
+  b = "a:b:c:d"
+  print(b.split(":"))
+  
+  # ['a', 'b', 'c', 'd']로 출력
+  ```
+
+  
 
 
 
