@@ -16,7 +16,7 @@
 
 > Python 학습 내용 복습
 
-- [기본 문법](https://github.com/hyunwoogo/TIL/blob/master/python/python_strat.md)
+- [기본 문법](https://github.com/hyunwoogo/TIL/blob/master/python/python_start.md)
 - [기본 자료형](https://github.com/hyunwoogo/TIL/blob/master/python/data_type.md)
 - [자료형(리스트, 튜플, ...)](https://github.com/hyunwoogo/TIL/blob/master/python/data_type_2.md)
 
