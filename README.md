@@ -20,6 +20,7 @@
 - [기본 자료형](https://github.com/hyunwoogo/TIL/blob/master/python/data_type.md)
 - [자료형(리스트, 튜플, ...)](https://github.com/hyunwoogo/TIL/blob/master/python/data_type_2.md)
 - [제어문](https://github.com/hyunwoogo/TIL/blob/master/python/control_statement.md)
+- [함수](https://github.com/hyunwoogo/TIL/blob/master/python/function.md)
 
 #### 3. GIT
 
