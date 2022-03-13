@@ -65,7 +65,7 @@ print(type(swap(10, 20)))	# <class 'tuple'> 출력
 >   ```python
 >   def sum(a, b):	# a, b는 매개변수
 >       return a + b
->       
+>         
 >   print(sum(3, 4))	# 3, 4는 인수
 >   ```
 
@@ -221,7 +221,7 @@ print(sum(b = 5, a = 3))	# 8 출력
   dic_1(**dic)
   
   '''
-  출력값 : 
+  <출력문> 
   dict_items([('name', '홍길동'), ('나이', 20)])
   name = 홍길동
   나이 = 20
