@@ -1,6 +1,6 @@
 # 문제 링크
 
-### 1. 표준 입출력
+### step. 1
 
 - [BoJ1000 - A + B.1](https://www.acmicpc.net/problem/1000)
 
