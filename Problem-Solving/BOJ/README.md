@@ -18,4 +18,6 @@
 
 - [BoJ10988 - 팰린드롬](https://www.acmicpc.net/problem/10988)
 
+- [BoJ2789 - 유학금지](https://www.acmicpc.net/problem/2789)
+
   
