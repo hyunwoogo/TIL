@@ -20,4 +20,6 @@
 
 - [BoJ2789 - 유학금지](https://www.acmicpc.net/problem/2789)
 
+- [BoJ2941 - 크로아티아 알파벳](https://www.acmicpc.net/problem/2941)
+
   
