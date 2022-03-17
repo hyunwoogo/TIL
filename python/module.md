@@ -57,3 +57,78 @@ import mod1
        - 여기서 모듈이름은 XXX.py에서 .py확장자를 제거한 XXX만을 가리킴
     2. `from 모듈이름 import 모듈함수`
        - 모듈안에 함수하나만 쓰고 싶은 경우
+       - `from 모듈이름 import*` :  `*`은 해당하는 모듈의 모든 함수를 다 쓰겠다
+       - 함수 여려개 사용 할 때 : `from 모듈이름 import 모듈함수1, 모듈함수2, ...`
+
+- **`__name__`** 변수 사용해 보기 예제
+
+> - **`__name__`**
+>
+>   - 파일을 생성할 시 자동으로 생성되는 변수
+>   - 출력하면 `__main__` 이 나오는데 그것은 현재 작업공간이 main이라는 뜻
+>
+> - 순서
+>
+>   1.  모듈 생성
+>
+>   ```python
+>   if __name__ == '__main__':
+>       print('실행합니다.')
+>   else:
+>       print('실행하지 않습니다.')
+>   ```
+>
+>   2. 현재 디렉터리에 저장(test.py)
+>   3. cmd에서 test.py 실행 시켜 보기
+>
+>   ```bash
+>   py test.py
+>   ```
+>
+>   4. 실행 됨
+>   5. python에서 다시 실행
+>
+>   ```python
+>   from importlib import reload	# 한번 부른 모듈을 다시 부르면 오류가 나기 때문에 reload 메서드를 쓰기위해 import해줌
+>   import test
+>   reload(test)
+>   ```
+>
+> - `__name__` 변수의 사용 목적
+>
+>   - 메인 환경에서 실행시킬 수 있는 코드와 import 시켜서 실행시킬 수 있는 코드를 구분지어 주고 싶을 때 사용
+
+- 모듈 사용해보기 예제
+
+  - 사전 작업
+
+  ```python
+  # 메모장에 아래 내용 입력후 저장(mod2.py) 
+  
+  PI = 3.141592
+  
+  class Math:
+      def solv(self, r):
+          return PI * (r ** 2)
+  
+  def add(a, b):
+      return a + b
+  ```
+
+  - 모듈 사용
+
+  ```python
+  import mod2
+  print(mod2.PI)	# 3.141592 출력
+  
+  a = mod2.Math()
+  print(a.solv(2))	# 12.577368 출력
+  
+  # 모듈 내 메서드나 변수 사용하려면
+  # 모듈명.모듈변수(메서드) 로 사용
+  ```
+
+  
+
+  
+
