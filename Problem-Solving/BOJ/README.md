@@ -22,4 +22,6 @@
 
 - [BoJ2941 - 크로아티아 알파벳](https://www.acmicpc.net/problem/2941)
 
+- [BoJ2231 - 분해합](https://www.acmicpc.net/problem/2231)
+
   
