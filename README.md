@@ -16,14 +16,14 @@
 
 > Python 학습 내용 복습
 
-- [기본 문법](https://github.com/hyunwoogo/TIL/blob/master/python/python_start.md)
+- [기본 문법](https://github.com/hyunwoogo/TIL/blob/master/python/python_start.gitmd)
 - [기본 자료형](https://github.com/hyunwoogo/TIL/blob/master/python/data_type.md)
 - [자료형(리스트, 튜플, ...)](https://github.com/hyunwoogo/TIL/blob/master/python/data_type_2.md)
 - [제어문](https://github.com/hyunwoogo/TIL/blob/master/python/control_statement.md)
 - [함수](https://github.com/hyunwoogo/TIL/blob/master/python/function.md)
 - [파일 입출력](https://github.com/hyunwoogo/TIL/blob/master/python/file_input_output.md)
 - [클래스](https://github.com/hyunwoogo/TIL/blob/master/python/class.md)
-- [모듈, 패키지](https://github.com/hyunwoogo/TIL/blob/master/python/module_package.md)
+- [모듈](https://github.com/hyunwoogo/TIL/blob/master/python/module.md)
 
 #### GIT
 
