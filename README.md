@@ -23,7 +23,8 @@
 - [함수](https://github.com/hyunwoogo/TIL/blob/master/python/function.md)
 - [파일 입출력](https://github.com/hyunwoogo/TIL/blob/master/python/file_input_output.md)
 - [클래스](https://github.com/hyunwoogo/TIL/blob/master/python/class.md)
-- [모듈](https://github.com/hyunwoogo/TIL/blob/master/python/module.md)
+- [모듈](https://github.com/hyunwoogo/TIL/blob/master/python/module_package.md)
+- [예외처리](https://github.com/hyunwoogo/TIL/blob/master/python/try_ except.md)
 
 #### GIT
 
