@@ -19,4 +19,6 @@
 
 - [BoJ10809 - 알파벳 찾기](https://www.acmicpc.net/problem/10809)
 
+- [BoJ8958 - OX퀴즈](https://www.acmicpc.net/problem/8958)
+
   
