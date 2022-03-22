@@ -330,3 +330,184 @@
      > 첫 번째 인수인 ''는 현재 디렉터리를 말함
 
 2. `pickle`
+
+   - `pickle` 은 객체의 형태를 그대로 유지하면서 파일에 저장하고 불러올 수 있게 하는 모듈
+   - `pickle` 모듈 예제
+
+   ```python
+   # pickle 사용 X
+   with open("hello.txt", "w") as f:
+       f.write("hello")
+       
+   with open("list.txt", "w") as f:
+       f.write(["a", "b", "c"])	# 에러 발생
+       
+   # pickle 사용 O
+   import pickle
+   with open("list.txt", "wb") as f:
+       pickle.dump(["a", "b", "c"], f)
+   ```
+
+   > - `pickle.dump` : 리스트 객체인 data를 그대로 파일에 저장
+   > - 파일 모드 종류(pickle을 쓸때는 파일모드 뒤에 **`b(바이너리모드)`**를 꼭 붙여줌)
+   >   - `r` : 읽기 모드 
+   >   - `w` :  쓰기 모드
+   >   - `x` :  쓰기 모드(동일 파일이 존재하면 오류발생)
+   >   - `a` :  쓰기 모드(동일 파일이 존재하면 뒤에 내용 추가)
+   >   - `+` : 읽기, 쓰기 모드
+   >   - `t` : 텍스트 모드
+   >   - `b` : 바이너리 모드(바이트 단위 데이터 기록에 사용)
+   >     - 바이너리 파일은 사용자가 읽을 수 없음
+
+   ```python
+   with open('list.txt', 'rb') as f:
+       data = pickle.load(f)
+       
+   print(data)	# ['a', 'b', 'c']
+   ```
+
+   > - pickle을 이용하여 데이터를 불러올 경우 변수 지정을 해줘야 함
+
+   ```python
+   import pickle
+   f = open("dic.txt", "wb")
+   data = {1: 'python', 2: 'you need'}
+   pickle.dump(data, f)
+   f.close()
+   ```
+
+   ```python
+   import pickle
+   f = open("dic.txt", "rb")
+   data = pickle.load(f)
+   print(data)
+   f.close()	# {1 :'python', 2 : 'you need'} 출력
+   ```
+
+3.  `os`
+
+   - `os`모듈은 환경 변수나 디렉터리, 파일 등의 OS 자원을 제어할 수 있게 해주는 모듈
+   - `os`모듈 예제
+
+   ```python
+   # 작업 디렉터리 변경
+   import os
+   os.chdir('C:\\Users\\student')	# 해당 디렉터리로 작업 위치를 변경
+   
+   # 디렉터리 위치 확인
+   import os
+   os.getcwd()		# 현재 디렉터리 위치를 결과값으로 리턴
+   
+   # 시스템 명령어 호출
+   import os
+   os.system('dir')
+   os.system('cls')
+   ```
+
+   - 기타 유용한 os 관련 함수( cmd에서 입력해보는것이 편함 )
+     - `os.mkdir(디렉터리)` : 디렉터리를 생성
+     - `os.rmdir(디렉터리)` : 디렉터리를 삭제, 디렉터리가 비어 있어야 삭제 가능
+     - `os.unlink(파일)` : 파일을 지운다
+     - `os.rename(src, dst)` : src라는 이름의 파일을 dst라는 이름으로 바꿔줌
+
+4.  `shutil`
+
+   - `shutil`은 파일을 복사해 주는 파이썬 모듈
+
+   ```python
+   import shutil
+   
+   shutil.copy("src.txt", "dst.txt")	# src.txt파일과 동일한 내용의 파일이 dst.txt로 복사
+   ```
+
+5.  `glob`
+
+   - 특정 디렉터리에 있는 파일 이름 모두를 알아야 할 때 사용하는 모듈
+
+   ```python
+   # 디렉터리에 있는 파일들을 리스트로 만들기 - glob(pathname)
+   import glob
+   glob.glob("C:\\Users\\student\\Python\\list*")	
+   # 디렉터로에 list로 시작하는 파일을 모두 찾아 리스트로 만듦
+   ```
+
+6.  `random`
+
+   - 난수(규칙이 없는 임의의 수)를 발생시키는 모듈
+   - `random.random` : 실수 중에서 난수값 돌려주기 (0 <= x < 1)
+
+   ```python
+   import random
+   random.random()
+   ```
+
+   - `random.randint` : 정수 중에서 난수 값 돌려주기
+
+     - `random.randint(a, b)` 형태로 함수의 인자를 넣어주면 `a <= x <= b` 범위의 정수를 반환
+
+     ```python
+     import random
+     random.randint(1, 10)
+     random.randint(10, 20)
+     ```
+
+   - `random.uniform(a, b)` :  `a <= x <= b` 범위의 실수를 반환
+
+   ```python
+   import random
+   random.uniform(10, 20)
+   ```
+
+   - `random.choice` : 객체의 요소 중에서 무작위로 하나를 선택하여 리턴
+
+   ```python
+   # 1. random.choice 사용 X
+   import random
+   def random_pop(data):
+       number = random.randint(0, len(data) - 1)	# 0 ~ 리스트길이 범위의 숫자를 랜덤으로 변수에 저장
+       return data.pop(number)		# data리스트에서 number자리의 요소를 빼낸다
+   
+   if __name__ = "__main__":
+       data = [1, 2, 3]
+       while data:
+           print(random_pop(data))
+           
+           
+   # 2. random.choice 사용
+   def random_pop(data):
+       number = random.choice(data)
+       data.remove(number)
+       return number
+   
+   if __name__ == "__main__":
+       data = [1, 2, 3]
+       while data:
+           print(random_pop(data))     
+   
+   ```
+
+   - `random.shuffle` : 객체의 요소를 무작위로 섞고 싶을 때 사용
+
+   ```python
+   import random
+   data = [1, 2, 3, 4, 5]
+   random.shuffle(data)
+   print(data)	# [5, 1, 3, 4, 2]
+   ```
+
+7.  `webbrowser`
+
+   - 시스템에서 사용하는 기본 웹 브라우저를 자동으로 실행하는 모듈
+
+   ```python
+   import webbrowser
+   
+   webbrowser.open("http://google.com")	# 자동으로 사이트 열기(구글 사이트)
+   										# open함수는 웹 브라우저가 이미 실행된 상태라면 입력 주소로 이동
+       									# 웹브라우저가 실행되지 않은 상태라면 새로 웹 브라우저를 실행한 후 해당 주소로 이동
+           
+   webbrowswer.open_new("http://google.com")	# 새창으로 사이트 열기
+   											# 이미 웹 브라우저가 실행된 상태이더라도 새로운 창으로 해당 주소가 열림
+   ```
+
+   
