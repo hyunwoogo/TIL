@@ -23,4 +23,8 @@
 
 - [BoJ2455 - 지능형 기차 1](https://www.acmicpc.net/problem/2455)
 
+- [BoJ2908 - 상수](https://www.acmicpc.net/problem/2908)
+
+- [BoJ2920 - 음계](https://www.acmicpc.net/problem/2920)
+
   
