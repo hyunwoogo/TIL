@@ -21,4 +21,6 @@
 
 - [BoJ8958 - OX퀴즈](https://www.acmicpc.net/problem/8958)
 
+- [BoJ2455 - 지능형 기차 1](https://www.acmicpc.net/problem/2455)
+
   
