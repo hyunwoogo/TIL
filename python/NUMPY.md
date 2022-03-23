@@ -40,7 +40,7 @@ print(my_list)	# [0, 1, 2, 3, ..., 999999]
     - 2차원 : `Matrix`
     - 3차원 : `Tensors`
 
-    ![image-20220323165048893](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220323165048893.png)
+    ![image-20220323171907750](NUMPY.assets/image-20220323171907750.png)
 
 - `ndarray`
 

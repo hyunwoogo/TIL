@@ -207,8 +207,8 @@ sys.path.remove(sys.path[-1])	# 리스트 형태이기 때문에 가능, 마지�
 
 - 파이썬 인터프리터(interactive shell)를 실행
 
-![image-20220318174257261](module.assets/image-20220318174257261.png)
+![image-20220318174257261](module_package.assets/image-20220318174257261.png)
 
 - 패키지 안에 함수 실행
 
-![image-20220318174401660](module.assets/image-20220318174401660.png)
+![image-20220318174401660](module_package.assets/image-20220318174401660.png)
