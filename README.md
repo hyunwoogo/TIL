@@ -26,6 +26,7 @@
 - [모듈](https://github.com/hyunwoogo/TIL/blob/master/python/module_package.md)
 - [예외처리](https://github.com/hyunwoogo/TIL/blob/master/python/try_except.md)
 - [내장함수/외장함수](https://github.com/hyunwoogo/TIL/blob/master/python/function.md)
+- [넘파이(NUMPY)](https://github.com/hyunwoogo/TIL/blob/master/python/NUMPY.md)
 
 #### GIT
 
