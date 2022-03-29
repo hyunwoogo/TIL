@@ -13,7 +13,7 @@
 - [BoJ2789 - 유학금지](https://www.acmicpc.net/problem/2789)
 - [BoJ2941 - 크로아티아 알파벳](https://www.acmicpc.net/problem/2941)
 
-### 스터디 1일 1알고
+### 1일 1알고
 
 - [BoJ2231 - 분해합](https://www.acmicpc.net/problem/2231)
 
@@ -26,5 +26,9 @@
 - [BoJ2908 - 상수](https://www.acmicpc.net/problem/2908)
 
 - [BoJ2920 - 음계](https://www.acmicpc.net/problem/2920)
+
+- [BoJ2456 - 학급회장]( https://www.acmicpc.net/problem/2456)
+
+- [BoJ2839 - 설탕배달](https://www.acmicpc.net/problem/2839)
 
   
