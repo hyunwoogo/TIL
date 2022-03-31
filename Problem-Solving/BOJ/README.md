@@ -33,6 +33,8 @@
 
 - [BoJ2839 - 백설공주](https://www.acmicpc.net/problem/3040)
 
+- [BoJ2851 - 슈퍼 마리오](https://www.acmicpc.net/problem/2851)
+
   
   
   
