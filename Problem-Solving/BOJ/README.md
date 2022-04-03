@@ -37,6 +37,8 @@
 
 - [BoJ2851 - 탄산음료](https://www.acmicpc.net/problem/5032)
 
+- [BoJ2851 - 수 정렬하기](https://www.acmicpc.net/problem/2750)
+
   
   
   
