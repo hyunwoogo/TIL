@@ -31,13 +31,15 @@
 
 - [BoJ2839 - 설탕배달](https://www.acmicpc.net/problem/2839)
 
-- [BoJ2839 - 백설공주](https://www.acmicpc.net/problem/3040)
+- [BoJ3040 - 백설공주](https://www.acmicpc.net/problem/3040)
 
 - [BoJ2851 - 슈퍼 마리오](https://www.acmicpc.net/problem/2851)
 
-- [BoJ2851 - 탄산음료](https://www.acmicpc.net/problem/5032)
+- [BoJ5032 - 탄산음료](https://www.acmicpc.net/problem/5032)
 
-- [BoJ2851 - 수 정렬하기](https://www.acmicpc.net/problem/2750)
+- [BoJ2750 - 수 정렬하기](https://www.acmicpc.net/problem/2750)
+
+- [BoJ2857 - FBI](https://www.acmicpc.net/problem/2857)
 
   
   
