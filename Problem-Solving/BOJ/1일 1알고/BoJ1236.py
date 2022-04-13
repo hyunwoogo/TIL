@@ -18,6 +18,7 @@ for _ in range(col):
         lst.append(castle[n][_])
     if "X" not in lst:
         count_c += 1
+    lst = []
 
 answer = max(count_r, count_c)
 

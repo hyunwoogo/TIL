@@ -45,6 +45,12 @@
 
 - [BOJ4458 - 첫 글자를 대문자로](https://www.acmicpc.net/problem/4458)
 
+- [BOJ1427 - 소프트인사이드](https://www.acmicpc.net/problem/1427)
+
+- [BOJ1236 - 성지키기](https://www.acmicpc.net/problem/1236)
+
+- [BOJ9655 - 돌 게임](https://www.acmicpc.net/problem/9655)
+
   
   
   
