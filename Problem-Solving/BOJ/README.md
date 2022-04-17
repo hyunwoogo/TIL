@@ -51,6 +51,10 @@
 
 - [BOJ9655 - 돌 게임](https://www.acmicpc.net/problem/9655)
 
+- [BOJ1076 - 저항](https://www.acmicpc.net/problem/1076)
+
+- [BOJ1292 - 쉽게 푸는 문제](https://www.acmicpc.net/problem/1292)
+
   
   
   
