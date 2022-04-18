@@ -55,6 +55,10 @@
 
 - [BOJ1292 - 쉽게 푸는 문제](https://www.acmicpc.net/problem/1292)
 
+- [BOJ2748 - 피보나치 수 2](https://www.acmicpc.net/problem/2748)
+
+- [BOJ9625 - BABBA](https://www.acmicpc.net/problem/9625)
+
   
   
   
