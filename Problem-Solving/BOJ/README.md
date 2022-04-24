@@ -59,6 +59,16 @@
 
 - [BOJ9625 - BABBA](https://www.acmicpc.net/problem/9625)
 
+- [BOJ5086 - 배수와 약수](https://www.acmicpc.net/problem/5086)
+
+- [BOJ2422 - 한윤정이 이탈리아에 가서 아이스크림을 사먹는데](https://www.acmicpc.net/problem/2422)
+
+- [BOJ1316 - 그룹 단어 체커](https://www.acmicpc.net/problem/1316)
+
+- [BOJ14916 - 거스름 돈](https://www.acmicpc.net/problem/14916)
+
+- [BOJ3273 - 두 수의 합](https://www.acmicpc.net/problem/3273)
+
   
   
   
