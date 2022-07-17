@@ -195,4 +195,127 @@ print(df.columns)	# Index(['나이', '성별', '학교'], dtype='object')
 
   <u><b>`열 이름 변경: DataFrame 객체.columns = 새로운 열 이름 배열`</b></u>
 
+- 행 인덱스 / 열 이름 변경 예제
+
+```python
+import pandas as pd
+
+# 행 인덱스 / 열 이름을 지정하여 데이터프레임 만들기
+df = pd.DataFrame([[22, '남', '인천대'], [21, '여', '경기대'], [20, '남', '부산대']],
+                  index=['규석', '영신', '성민'],
+                  columns=['나이', '성별', '학교'])
+
+df.index = ['준서', '지연', '성철']
+df.columns = ['연령', '남녀', '소속']
+
+print(df)
+
+'''
+    연령 남녀   소속
+준서  22  남  인천대
+지연  21  여  경기대
+성철  20  남  부산대
+'''
+
+print(df.index)		# Index(['준서', '지연', '성철'], dtype='object')
+print(df.columns)	# Index(['연령', '남녀', '소속'], dtype='object')
+```
+
+
+
+- `rename()` 함수를 사용하여 행 인덱스 / 열 이름 변경 가능
+
+  <u><b>`행 인덱스 변경: DataFrame 객체.rename(index={기존 인덱스:새 인덱스, ...})`</b></u>
+
+  <u><b>`열 이름 변경: DataFrame 객체.rename(columns={기존 열 이름:새 열 이름, ...})`</b></u>
+
   
+
+- 행 인덱스 / 열 이름 변경 예제(rename)
+
+```python
+import pandas as pd
+
+# 행 인덱스 / 열 이름을 지정하여 데이터프레임 만들기
+df = pd.DataFrame([[22, '남', '인천대'], [21, '여', '경기대'], [20, '남', '부산대']],
+                  index=['규석', '영신', '성민'],
+                  columns=['나이', '성별', '학교'])
+
+df.rename(index={'규석':'준서', '영신':'지연', '성민':'성철'}, inplace = True)
+df.rename(columns={'나이':'연령', '성별':'남녀', '학교':'소속'}, inplace = True)
+
+print(df)
+'''
+    연령 남녀   소속
+준서  22  남  인천대
+지연  21  여  경기대
+성철  20  남  부산대
+'''
+```
+
+> - inplace = True 를 쓰지 않으면 기존 객체가 변경되지 않음(기존 객체에 반영하기 위해 필수적으로 써줘야 됨)
+
+
+
+- 행 / 열 삭제
+  - 행 / 열 삭제 시 drop() 함수 사용
+  - 행을 삭제할 때 축(axis) 옵션으로 axis=0 혹은 입력 X
+  - 열을 삭제할 때 축(axis) 옵션으로 axis=1
+
+행 / 열 삭제 예제
+
+- 행 삭제 예제
+
+```python
+import pandas as pd
+
+exam_data = {'국어' : [70, 90, 80], '수학' : [90, 85, 80], '영어' : [100, 80, 90], '음악' : [70, 90, 100]}
+df = pd.DataFrame(exam_data, index=['인서', '형준', '소진'])
+
+# 데이터프레임 df를 복제하여 변수 df2에 저장.
+df2 = df
+
+# 데이터프레임 df를 복제하여 변수 df3에 저장.
+df3 = df
+
+# df2의 1개 행(row) 제거
+df2.drop(['인서'], axis = 0)
+```
+
+![image-20220718003606074](PANDAS.assets/image-20220718003606074.png)
+
+```python
+# df2의 2개 행(row) 제거
+df3.drop(['형준', '소진'], axis = 0)
+```
+
+![image-20220718003722045](PANDAS.assets/image-20220718003722045.png)
+
+
+
+- 열 삭제 예제
+
+```python
+import pandas as pd
+
+exam_data = {'국어' : [70, 90, 80], '수학' : [90, 85, 80], '영어' : [100, 80, 90], '음악' : [70, 90, 100]}
+df = pd.DataFrame(exam_data, index=['민혜', '재헌', '숙현'])
+
+# 데이터프레임 df를 복제하여 변수 df2에 저장.
+df2 = df
+
+# 데이터프레임 df를 복제하여 변수 df3에 저장.
+df3 = df
+
+# df2의 1개 열(column) 삭제
+df2.drop('국어', axis = 1)
+```
+
+![image-20220718003810711](PANDAS.assets/image-20220718003810711.png)
+
+```python
+# df3의 2개 열(column) 삭제
+df3.drop(['영어', '음악'], axis = 1)
+```
+
+![image-20220718003830359](PANDAS.assets/image-20220718003830359.png)
