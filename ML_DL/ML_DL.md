@@ -88,5 +88,29 @@
 
 ![image-20220723104743693](ML_DL.assets/image-20220723104743693.png)
 
+- 기본적인 AND gate
 
+```python
+import numpy as np
+
+def AND_basic(x1, x2):
+    w1, w2, theta = 0.5, 0.5, 0.7
+    tmp = x1*w1 + x2*w2
+    if tmp <= theta:
+        return 0
+    elif tmp > theta:
+        return 1
+    
+inputs = [(0, 0), (1, 0), (0, 1), (1, 1)]
+for x1, x2 in inputs:
+    y = AND_basic(x1, x2)
+    print('({x1}, {x2}) -> {y}'.format(x1=x1, x2=x2, y=y))
+
+'''
+(0, 0) -> 0
+(1, 0) -> 0
+(0, 1) -> 0
+(1, 1) -> 1
+'''
+```
 
