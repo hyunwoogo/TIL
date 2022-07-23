@@ -9,15 +9,15 @@
 
   - 자연어 처리 - 번역 / 챗봇
 
-    ![image-20220723090533791](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220723090533791.png)
+    ![image-20220723090533791](ML_DL.assets/image-20220723090533791-16585357320051.png)
 
   - 컴퓨터 비전 - 자율주행
 
-    ![image-20220723090608378](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220723090608378.png)
+    ![image-20220723090608378](ML_DL.assets/image-20220723090608378.png)
 
   - GAN
 
-    ![image-20220723090637186](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220723090637186.png)
+    ![image-20220723090637186](ML_DL.assets/image-20220723090637186.png)
 
 
 
@@ -30,4 +30,4 @@
 - 딥러닝(Deep Learning)
   - 데이터에 대한 다층적 표현과 추상화를 통해 학습하는 머신러닝의 기법.
 
-![image-20220723091224548](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220723091224548.png)
+![image-20220723091224548](ML_DL.assets/image-20220723091224548.png)
