@@ -29,6 +29,15 @@
 - [넘파이(NUMPY)](https://github.com/hyunwoogo/TIL/blob/master/python/NUMPY.md)
 - [판다스(PANDAS)](https://github.com/hyunwoogo/TIL/blob/master/python/PANDAS.md)
 
+#### ML/DL
+
+>Machin Learning / Deep Learning 학습 내용 복습
+
+- [기본 개념](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML_DL.md)
+
+- Machin Learning
+- Deep Learning
+
 #### GIT
 
 > GIT에 관한 기본적인 명령어, 조작법 정리 
