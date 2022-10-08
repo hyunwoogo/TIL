@@ -308,8 +308,167 @@
 
   1. MSE
 
-     - 가장 많이 쓰이는 손실함수
+     ![image-20221008222126218](ML_DL.assets/image-20221008222126218.png)
 
-       ![image-20221007163806471](ML_DL.assets/image-20221007163806471.png)
+     - y(k)는 신경망의 출력(신경망이 추정한 값)
+     - t(k)는 정답 레이블
+     - k는 데이터의 차원 수
+     - '1/2'는 크게 의미없는 숫자 같지만 추후 미분을 위해 존재한다.
+  
+  2.  Cross Entropy
+  
+     ![image-20221008222112063](ML_DL.assets/image-20221008222112063.png)
+  
+     - log는 밑이 e인 자연로그(ln)이다.
+     - y(k)는 신경망 출력
+     - t(k)는 정답 레이블(정답에 해당하는 인덱스의 원소만 1이고 나머지는 0인 원-핫 인코딩 사용)
+     - t(k) = 1(즉, 정답)일때만 자연 로그를 계산하는 식이다.
+     - 맨앞이 음수처리된 이유는 신경망의 출력값이 0~1 사이의 값이기 때문에 양수로 만들어 주기 위해서이다.
+  
+     
+  
+### 옵티마이저(Optimizer)
 
-       - 
+- 옵티마이저는 학습 데이터(Train Data) 셋을 이용하여 모델을 학습 할 때 데이터의 실제 결과와 모델이 예측한 결과를 기반으로 잘 줄일 수 있게 만들어 주는 역할을 한다.
+
+- 데이터의 처리
+
+  - 우리가 사용하는 데이터는 벡터화 되어 병렬 처리 된다.
+
+    ![image-20221008222748864](ML_DL.assets/image-20221008222748864.png)
+
+  - 실제 처리되는 데이터의 단위는 어떻게 될까?
+
+    - 한번 계산으로 최적화(optimization) 하기는 너무 어렵다.
+    - 여러번 학습시키기 위해 데이터를 나눈다.
+
+  - 데이터를 나누기 위한 단위
+
+    - Epoch
+      - 전체 sample 데이터를 이용하여 한 바퀴 돌며 학습하는 것을 1회 epoch이라 한다.
+      - 예) 2 epochs는 전체 sample을 이용하여 두 바퀴를 돌며 학습한 것이다.
+    - Step
+      - Weight와 Bias를 1회 업데이트하는 것을 1 Step이라 부른다.
+    - Batch
+      - 1 Step에서 사용한 데이터의 수이다.
+      - 예) Batch Size가 100이라고 가정하고 Step이 5이면 약 500개의 데이터를 이용한 것이다.
+    - Iteration
+      - 1회 학습을 1 Iteration 이라고 한다.
+
+  - Batch Size에 따른 Gradient Descent 과정
+
+    - <b>s = (n * e) / b</b>
+      - n = num of sample: 전체 학습할 데이터의 개수
+      - e = epochs: Epoch 수
+      - b = batch size: 배치 사이즈
+      - s = steps: Step 수
+
+- 옵티마이저(Optimizer)의 종류
+
+  ![image-20221008223343694](ML_DL.assets/image-20221008223343694.png)
+
+  1. Gradient Descent (Full Batch Gradient Descent)
+
+     - 일반적으로 GD라고 알려진 방식은 Full Batch Gradient Descent를 의미한다.
+
+     - Batch Size = m =전체를 의미함
+
+     - Batch Size가 m이면 1개의 Batch만 존재하고 1 Epoch당 1 Batch가 학습되어 Update됨
+
+       ![image-20221008223552255](ML_DL.assets/image-20221008223552255.png)
+
+       ![image-20221008223615504](ML_DL.assets/image-20221008223615504.png)
+
+  2. Stochastic Gradient Descent
+  
+     - Batch Size = m =1 (1step 에서 랜덤으로 추출된 1개의 데이터 사용)
+  
+     - Vector 연상의 장점이 사라지고 한 개의 학습 데이터씩 가중치가 업데이트 된다.
+  
+     - 가중치가 빠르게 업데이트 되므로 학습의 속도가 빨라진다.
+  
+     - 상대적으로 적은 Epoch가 사용됨
+  
+       
+  
+  3. Mini Batch Gradient Descent
+  
+     - Batch Size =m =n
+     - 2 ^ n개로 Batch Size를 지정해 준다. (2진법적인 관점)
+     - 미니 배치 확률적 경사하강법은 SGD의 노이즈를 줄이면서도 전체 배치보다는 더 빠르게 최적점을 구할 수 있다.
+  
+     
+  
+  4.  Momentum
+  
+     - 경사의 방향이 위에서 아래로 흘러가는 모습을 운동으로 표현
+  
+     - 경사하강법의 문제
+  
+       - 평탄한 지점에서 더 이상 학습불가
+       - 학습 속도가 느리다.
+  
+       ![image-20221008224054948](ML_DL.assets/image-20221008224054948.png)
+  
+       ![image-20221008224101813](ML_DL.assets/image-20221008224101813.png)
+  
+  5.  Adagrad
+  
+     - 가중치의 업데이트 횟수에 따라 step size를 다르게 조절
+  
+       - 변화하지 않는 가중치들은 step size를 크게, 변화하는 가중치들은 step size를 작게
+  
+       - dL/dW는 W에 대한 손실 함수의 기울기
+  
+       - h: 손실함수의 기울기를 제곱하여 계속 더해준다.
+  
+         ![image-20221008224220672](ML_DL.assets/image-20221008224220672.png)
+  
+  ​     
+
+
+
+### 역전파
+
+- 순전파
+
+  ![image-20221008234042459](ML_DL.assets/image-20221008234042459.png)
+
+  ![image-20221008234051265](ML_DL.assets/image-20221008234051265.png)
+
+- 역전파
+
+  ![image-20221008234200135](ML_DL.assets/image-20221008234200135.png)
+
+
+
+### Overfitting / Underfitting (과대적합 / 과소적합)
+
+- <b>과대적합(Overfitting)</b>이란 모델이 훈련세트에서는 좋은 성능을 내지만 검증세트에서는 낮은 성능을 내는 경우를 말한다.
+
+- 훈련세트의 정확도가 99% 이고, 검증세트의 정확도가 80% 수준이라면 과대적합을 의심할 수 있다.
+
+- 과소 적합은 훈련세트와 검증 세트의 성능에는 차이가 크지 않지만 모두 낮은 성능을 내는 경우를 의미한다.
+
+- 언제 나타날까?
+
+  - 매개 변수가 많고 표현력이 높은 모델(복잡한 모델)
+  - 훈련 데이터가 너무 적은 모델
+
+- Overfitting vs Underfitting
+
+  - 모델 복잡도에 따른 변화
+
+    ![image-20221008234614719](ML_DL.assets/image-20221008234614719.png)
+
+    ![image-20221008234632493](ML_DL.assets/image-20221008234632493.png)
+
+  - Epoch 에 따른 학습정도
+
+    ![image-20221008234654720](ML_DL.assets/image-20221008234654720.png)
+
+  - 훈련 세트의 크기에 따른 Overfitting/Underfitting
+
+    ![image-20221008234720214](ML_DL.assets/image-20221008234720214.png)
+
+​     
