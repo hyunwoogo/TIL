@@ -36,7 +36,7 @@
 - [기본 개념](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML_DL.md)
 
 - Machin Learning
-- Deep Learning
+- [Deep Learning](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DL.md)
 
 #### GIT
 
