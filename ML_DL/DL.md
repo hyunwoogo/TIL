@@ -393,7 +393,9 @@
     ![image-20221011165204072](DL.assets/image-20221011165204072.png)
   
     - RNN 또는 Bidirection RNN을 여러 층을 쌓아서 Model 생성 가능
-    - 이떼, return_sequences=True를 이용해 출력의 단위를 맞춰줄 수 있다.
+    - 이때, return_sequences=True를 이용해 출력의 단위를 맞춰줄 수 있다.
+  
+  
   
   
   
