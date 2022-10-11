@@ -578,3 +578,340 @@
 
 ### AE(AutoEncoder)
 
+- AutoEncoder는 Output을 Input의 근사로 하는 함수를 학습하는 비지도 학습
+
+- 도입
+
+  - Feature를 복제하는 방법
+    - 1 to 1으로 신경망을 구성해준다.
+  - Feature Extraction 해주는 방법
+    - 제약을 주고 Feature를 복제한다. -> 중요 요소들을 스스로 판별해준다.
+
+- 구성
+
+  - Encoder
+    - 입력 FeatureSet을 표현 학습을 통해 다른 표현으로 반환
+    - 특징을 추출(<b>Feature Extraction</b>)
+    - 네트워크는 고차원 입력 데이터를 저차원 표현 벡터로 압축한다.
+  - Decoder
+    - 새로 학습한 표현을 원본의 형식으로 재구성 (<b>Feature Construction / Reconstruction</b>)
+    - 주어진 표현 벡터를 원본 차원으로 다시 압축 해제
+
+- 특징
+
+  - 입력의 shape와 출력의 shape이 같다.
+  - 가운데 계층의 노드수가 입력값보다 작다.
+    - 데이터를 압축함
+    - 차원을 축소함 (Feature를 요약하여, 필요한 값들로 정리해 놓는다.)
+  - 입력 -> encoding -> 차원축소 -> decoding -> 출력
+
+- 설계
+
+  - feature를 압축하여 가능한 만큼 feature의 갯수를 줄인다.
+
+  - 많이 줄이지만 원본이 의미하고 있는 핵심은 포함해야함
+
+  - feature의 성질은 신경망에 의해 변경됨.
+
+  - Function
+
+    - Encoder function: z = f(x)
+
+    - Decoder function: x^ = g(z)
+
+      ![image-20221011203538134](DL.assets/image-20221011203538134.png)
+
+- 동작
+
+  - 학습 원리: input Data를 output Data로 학습하는 방식으로 학습시킨다.
+
+  - 가장 쉬운 방법
+
+    - 항등함수로 생성한 신경망
+
+    - f(x) = x
+
+    - AE가 항등함수를 학습하는것은 비효율적이다.
+
+    - 100% 복사 되지만 차원이 줄어들지 않는다.
+
+      ![image-20221011202837468](DL.assets/image-20221011202837468.png)
+
+    - Dimension reduction이 포함된 방식을 차용한다면?
+
+      - 예) 6개의 Input Data 정보를 유지할 수 있도록 Key가 되는 정보를 Feature Extraction 해준다.
+
+      - Hidden Layers에 제약조건을 주고 데이터를 입력한다면 중요한 요소들만 판별해낼 수 있따. (6 -> 3 -> 6)
+
+        ![image-20221011203043200](DL.assets/image-20221011203043200.png)
+
+      - 3개의 데이터를 이용해 6개의 데이터를 유추한다. (즉, 3개는 각각 독립적인 요소들만 남게된다.)
+
+        - Latent Space( 위 그림에서 가장 중간에 a1 ~ a3 )는 입력된 Data를 표현하는 가장 핵심적인 값들을 갖고있는 차원이다.
+
+        ![image-20221011203210569](DL.assets/image-20221011203210569.png)
+
+        ![image-20221011203310575](DL.assets/image-20221011203310575.png)
+
+        ![image-20221011203332729](DL.assets/image-20221011203332729.png)
+
+- 손실함수
+
+  - E[∥X − g ∘ f(X)∥ ] ≈ 0
+
+    - Encoder function: z = f(x)
+
+    - Decoder function: x = g(z)
+
+      ![image-20221011203525453](DL.assets/image-20221011203525453.png)
+
+  - 입력과 Encoding -> Decoding 된 결과에 차이에 대한 평균이 0에 가까워 지도록 설계하면 된다.
+
+- 과소완전 AE
+
+  ![image-20221011203731794](DL.assets/image-20221011203731794.png)
+
+  - AE에서 Encoder의 역할은 원본데이터의 새로운 표현을 학습하는 구성요소이다.
+  - 과소완전(undercomplete)이란 내부의 표현이 입력 데이터보다 저차원이기 때문에 사용하는 용어이다.
+  - Feature는 원본 피처 및 관측치 셋에서 파생된 새로운 피처셋이다.
+    - Encoder: h = f(x)
+      - x: 원본 관츠기
+      - f: 학습되는 값
+      - h: 새롭게 학습된 feature
+    - Decoder: r = g(h)
+    - 제대로 수행된다면 g(f(x))는 모든 x와 정확히 같지 않지만 충분히 가까운 값을 갖는다.
+      - 즉, g(f(x)) != x
+
+- 적층 AE
+
+  - 여러 은닉층을 가진 AE를 Stacked AE(또는 Deep)라고 한다.
+
+  - MNIST를 활용한 Stacked AE
+
+    ![image-20221011204344049](DL.assets/image-20221011204344049.png)
+
+    ![image-20221011204400446](DL.assets/image-20221011204400446.png)
+
+- Denoising AE
+
+  - 오토인코더는 원본 입력 데이터로 부터 새로운 표현을 학습 가장 핵심적인 요소를 추출 <b>원본 데이터의 노이즈는 무시.</b>
+
+  - 배경에서 들려오는 잡담(노이즈)으로 부터 대화(신호)를 분리할 수 있다.
+
+  - 잡음은 입력에 추가된 순수한 가우시안 잡음 이거나 드롭아우서럼 무작위로 입력을 꺼서 발생시킬 수도 있다.
+
+    ![image-20221011204546133](DL.assets/image-20221011204546133.png)
+
+    ![image-20221011204602626](DL.assets/image-20221011204602626.png)
+
+  - 입력된 정보를 유지할 수 있는 특징을 추출할 수 있지만, 결과에 포함된 잡음을 제거 할 수 있다.
+
+    ![image-20221011204654940](DL.assets/image-20221011204654940.png)
+
+
+
+### VAE(Variational AutoEncoder)
+
+- 도입
+
+  - Auto Encoder의 목적을 생각하고 Manifold에서 새로운 Data를 생성
+
+- 목적
+
+  - Manifold Learning을 통해 Feature의 차원을 줄이는게 목적이다.
+
+  - Manifold 위에 찍힌 점을 찍는다면 어떻게 될까?
+
+    - 데이터를 새로 생성할 수 있지 않을까?
+    - 실제 결과는 제대로된 데이터가 생성되진 않는다.
+    - Laten Space는 입력 데이터들에 대한 특징 정보들을 함축하고 있는데, 그렇다면 데이터를 생성할 순 없을까?
+
+    ![image-20221011205118469](DL.assets/image-20221011205118469.png)
+
+    ![image-20221011205136952](DL.assets/image-20221011205136952.png)
+
+- Generative Model
+
+  - Goal: Data Set에 존재할만한 Data를 생성해 낸다.
+  - 종류
+    - Variation AutoEncoder
+    - Generative Adversarial Network
+
+- Density Estimation
+
+  - 데이터를 제대로 생성해내지 못한 이유를 생각해보자.
+
+    - 데이터 자체의 Density(밀도)가 많이 떨어진다.
+    - 해결법: 데이터의 밀도를 추정하면 됨
+
+  - Unsupervised Learning: DataSet이 존재하면 DataSet의 밀도를 추정하여 확률 밀도 함수를 만든다. 물론, <b>함수 자체를 알 수 없다.</b>
+
+  - 확률 밀도 함수(pdf) 생성 -> Data Set의 분포를 알 수 있다.
+
+    ![image-20221011205423250](DL.assets/image-20221011205423250.png)
+
+    ![image-20221011205513590](DL.assets/image-20221011205513590.png)
+
+    ![image-20221011205527354](DL.assets/image-20221011205527354.png)
+
+- Variational Autoencoder
+
+  ![image-20221011205556642](DL.assets/image-20221011205556642.png)
+
+  - 학습 데이터의 분포를 따르는 새로운 데이터를 만드는 AutoEncoder 기반의 생성 모델
+  - AE는 Encoder를 이용해 차원을 축소하기 위한 목적
+  - VAE는 Decoder를 이용해 새로운 Data를 생성하기 위한 Model
+
+
+
+- Variational(변분법) Method
+
+  - 어떤 함수 p(x)의 극점을 찾는 문제에서 해당 함수를 직접 다루는 것이 쉽지 않을 때, 쉽게 다룰 수 있는 다른 함수 q(x)로 대체해 이를 최적화 하여, p(x)에 대한 근사적인 해를 구하는 방법
+
+  - HOW?
+
+    ![image-20221011205814238](DL.assets/image-20221011205814238.png)
+
+    ![image-20221011205835450](DL.assets/image-20221011205835450.png)
+
+    - 단계1. Encoder
+
+      ![image-20221011205914658](DL.assets/image-20221011205914658.png)
+
+      ![image-20221011205928322](DL.assets/image-20221011205928322.png)
+
+    - 단계2. Reparameterization Trick (Sampling)
+
+      ![image-20221011205958138](DL.assets/image-20221011205958138.png)
+
+      ![image-20221011210009499](DL.assets/image-20221011210009499.png)
+
+      - 새로운 Data를 생성하기 위해 Sampling을 통해 Decoding 해준다.
+
+      - Sampling을 위해 Data의 평균과 분산을 학습한다.
+
+      - Sampling 없이 추론한 경우
+
+        ![image-20221011210117248](DL.assets/image-20221011210117248.png)
+
+      - Reparameterized form
+
+        ![image-20221011210145204](DL.assets/image-20221011210145204.png)
+
+        - 우리가 추정하고 싶은 확률 분포
+
+          ![image-20221011210226834](DL.assets/image-20221011210226834.png)
+
+          - Sampling 결과를 backpropagation 할 수 없다.
+
+        - reparmeterization trick을 통해 추정할 식
+
+          ![image-20221011210315839](DL.assets/image-20221011210315839.png)
+
+          ![image-20221011210405519](DL.assets/image-20221011210405519.png)
+
+          - 정규분포에서 z(i)를 샘플링 하는것과 ε을 정규분포에서 샘플링하고 그 값을 분산과 곱하고 평균을 더하는것은 같은 분포를 갖는다.
+
+    - 단계3. Decoder
+
+      ![image-20221011210619022](DL.assets/image-20221011210619022.png)
+
+      ![image-20221011210632177](DL.assets/image-20221011210632177.png)
+
+      - p(i)의 값을 Bernoulli 시행의 결과로 가정했기 때문에 activation function은 sigmoid로 설정 준다.
+
+    - Loss Function
+
+      ![image-20221011210755227](DL.assets/image-20221011210755227.png)
+
+      - Loss Function은 Reconstruction Error와 Regularization 두가지를 고려해야 한다.
+        - Reconstruction Error : input data와 output data에 대한 손실함수이다.
+          - Decoder의 결과가 Bernoulli 분포를 따른다고 가정하였으므로 확률값으로 손실함수를 계산할 수 있는 cross entropy를 사용
+        - Regularization : 원래 Data가 갖고있는 True 분포에 근사하기 위한 loss function
+          - True pdf와 Approximated pdf 두 확률 분포간의 차이를 계산하기 위해 <u><b>Kullback–Leibler divergence</b></u> 방식을 사용한다.
+
+
+
+- 참고
+
+  ![image-20221011211156811](DL.assets/image-20221011211156811.png)
+
+  ![image-20221011211223458](DL.assets/image-20221011211223458.png)
+
+  ![image-20221011211236251](DL.assets/image-20221011211236251.png)
+
+  - 확률분포 학습에 따른 새로운 Data 출력
+
+    ![image-20221011211311966](DL.assets/image-20221011211311966.png)
+
+    ![image-20221011211325229](DL.assets/image-20221011211325229.png)
+
+    ![image-20221011211338270](DL.assets/image-20221011211338270.png)
+
+
+
+### GAN(Generative Adversarial Networks)
+
+- Generative: 생성하다
+
+- Adversarial: 적대적 방식으로
+
+- Overview
+
+  ![image-20221011211611718](DL.assets/image-20221011211611718.png)
+
+  1. Latent Space에서 z(Noise Data)입력
+
+  2. z를 이용해 G(z) (위조 지폐) 생성
+
+  3.  Discriminator 가 D(G(z))와 D(x) 수행하여 진짜인지 가짜인지 판별
+
+     - x : 진짜 지폐
+
+     - 진짜 : 1 출력
+
+     - 가짜 : 0 출력
+
+       
+
+- <b>GAN</b>  vs  <b>VAE</b>
+
+  ![image-20221011211841845](DL.assets/image-20221011211841845.png)
+
+
+
+- 단계1. Discriminator Model
+
+  ![image-20221011211929143](DL.assets/image-20221011211929143.png)
+
+  - Discriminator가 진짜와 가짜를 구분할 수 있도록 학습한다.
+  - sigmoid function을 이용해 학습시킨다.
+
+
+
+- 단계2. Generator Model
+
+  ![image-20221011212021304](DL.assets/image-20221011212021304.png)
+
+  - Generator는 D(G(z))가 1이 되도록 학습한다.
+
+
+
+- Loss Function
+
+  - <b>Discriminator</b>  vs  <b>Generator</b>
+
+    ![image-20221011212139059](DL.assets/image-20221011212139059.png)
+
+    ![image-20221011212149492](DL.assets/image-20221011212149492.png)
+
+    ![image-20221011212156856](DL.assets/image-20221011212156856.png)
+
+    1. <b>Discriminator</b>
+
+       ![image-20221011212238443](DL.assets/image-20221011212238443.png)
+
+       - Object Function을 최대화 하는 D를 찾기 위해서는 2가지가 수행되면 된다.
+         - D(x) = 1 : Real Data를 Real Data라고 판별
+         - D(G(z)) = 0 : Fake Data를 Fake Data라고 판별
+
