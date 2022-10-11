@@ -914,4 +914,33 @@
        - Object Function을 최대화 하는 D를 찾기 위해서는 2가지가 수행되면 된다.
          - D(x) = 1 : Real Data를 Real Data라고 판별
          - D(G(z)) = 0 : Fake Data를 Fake Data라고 판별
+    
+    2. <b>Generator</b>
+    
+       ![image-20221012004901904](DL.assets/image-20221012004901904.png)
+    
+       - logD(x) : G에 관려된 함수가 아니므로 상수 (학습의 대상이 아니다)
+    
+       - log(1 - D(G(z))) : D(G(x)) = 1 일때 log0 이므로 값이 최소화 된다.
+    
+         - 좀 더 학습이 잘되는 형태인 max(g)[log(D(G(z)))] 로 변경하여 문제를 해결한다.
+         - Generator의 학습을 0에서 시작하는 이유는 학습 초반 Discriminator의 성능이 우세하여 초기 D(G(z))의 값은 0에 가깝기 때문이다.
+    
+         ![image-20221012005126410](DL.assets/image-20221012005126410.png)
+  
+- 학습에 따른 분포 근사
+
+  ![image-20221012005202167](DL.assets/image-20221012005202167.png)
+
+  - Blue : Discriminator distribution
+  - Green : Generative distribution
+  - Black : Real data distribution
+  - 단계를 거듭할수록 Discriminator distribution의 값이 0.5가 되는걸 확인할 수 있다.
+    - 진짜와 가짜를 제대로 판별 못 하는중
+
+
+
+- GAN 예
+
+  ![image-20221012005532331](DL.assets/image-20221012005532331.png)
 
