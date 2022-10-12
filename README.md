@@ -36,7 +36,24 @@
 - [기본 개념](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML_DL.md)
 
 - Machine Learning
+
 - [Deep Learning](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DL.md)
+
+  - Tensorflow
+
+  - 지도 학습(Supervised Learning)
+
+    >- DNN
+    >- CNN
+    >- RNN
+    
+  - 비지도 학습(Unsupervised Learning)
+  
+    >- 차원축소
+    >- Manifold Learning
+    >- AE(AutoEncoder)
+    >- VAE
+    >- GAN
 
 #### GIT
 
