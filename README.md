@@ -37,23 +37,23 @@
 
 - Machine Learning
 
-- [Deep Learning](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DL.md)
+- Deep Learning
 
-  - Tensorflow
+  - [Tensorflow](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/TensorFlow.md)
 
   - 지도 학습(Supervised Learning)
 
-    >- DNN
-    >- CNN
-    >- RNN
+    >- [DNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DNN.md)
+    >- [CNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/CNN.md)
+    >- [RNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/RNN.md)
     
-  - 비지도 학습(Unsupervised Learning)
+  - [비지도 학습(Unsupervised Learning)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Unsupervised_Learning.md)
   
-    >- 차원축소
-    >- Manifold Learning
-    >- AE(AutoEncoder)
-    >- VAE
-    >- GAN
+    >- [차원축소](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Dimension_Reduction.md)
+    >- [Manifold Learning](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Manifold.md)
+    >- [AE(AutoEncoder)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/AE.md)
+    >- [VAE](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/VAE.md)
+    >- [GAN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/GAN.md)
 
 #### GIT
 
