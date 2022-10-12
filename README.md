@@ -43,17 +43,17 @@
 
   - 지도 학습(Supervised Learning)
 
-    >- [DNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DNN.md)
-    >- [CNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/CNN.md)
-    >- [RNN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/RNN.md)
+    >- [DNN(Deep Neural Network)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DNN.md)
+    >- [CNN(Convolutional Neural Network)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/CNN.md)
+    >- [RNN(Recurrent Neural Network)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/RNN.md)
     
   - [비지도 학습(Unsupervised Learning)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Unsupervised_Learning.md)
   
     >- [차원축소](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Dimension_Reduction.md)
     >- [Manifold Learning](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/Manifold.md)
     >- [AE(AutoEncoder)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/AE.md)
-    >- [VAE](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/VAE.md)
-    >- [GAN](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/GAN.md)
+    >- [VAE(Variational AutoEncoder)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/VAE.md)
+    >- [GAN(Generative Adversarial Network)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/GAN.md)
 
 #### GIT
 
