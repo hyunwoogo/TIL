@@ -40,6 +40,9 @@
   >- [Scikit-Learn](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/Sklearn.md)
   >- [Confusion Matrix](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/Confusion_Matrix.md)
   >- [교차검증](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/validation.md)
+  >- [KNN(K-Nearest Neighbor)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/KNN.md)
+  >- [SVM(Support Vector Machine)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/SVM.md)
+  >- [DecisionTree](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/DecisionTree.md)
 
 - Deep Learning
 
