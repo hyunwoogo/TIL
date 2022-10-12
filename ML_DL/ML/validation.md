@@ -65,6 +65,24 @@
 
      
 
-     
+     ※ 참고
+
+     일반적으로 회귀에는 기본 k-겹 교차검증을 사용하고, 분류에는 StratifiedKFold를 사용한다. 또한, cross_val_score 함수에는 K-Fold의 매개변수를 제어할 수 가 없으므로, 따로 K-Fold 객체를 만들고 매개변수를 조정한 다음에 cross_val_score의 cv 매개변수에 넣어야 한다.
+
+3.  K-Fold 상세조정
+
+   - cv 매개변수로 전달되는 것을 <b>'교차 검증 분할기'</b>라고 하는데, 이를 통해 데이터 분할을 좀 더 세밀하게 할 수 있다.
+
+     ![image-20221012195809828](validation.assets/image-20221012195809828.png)
+
+4. 임의분할 교차검증(shuffle split cross validation)
+
+   ![image-20221012195843172](validation.assets/image-20221012195843172.png)
+
+   - 임의분할 교차검증은 train set과 test set의 크기를 유연하게 조절해야 할 때 유용하다.
+
+   - train_size와 test_size에 정수를 입력하면 해당 수 만큼 데이터포인트의 개수가 정해지며, 만일 실수를 입력하면 비율이 정해진다.
+
+     ![image-20221012195951345](validation.assets/image-20221012195951345.png)
 
      
