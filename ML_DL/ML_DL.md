@@ -32,7 +32,7 @@
 
 ![image-20220723091224548](ML_DL.assets/image-20220723091224548.png)
 
-#### 머신러닝이란?
+#### [머신러닝이란?](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/Sklearn.md)
 
 - 환경(Environment, E)과의 상호작용을 통해서 축적되는 경험적인 데이터(Data, D)를 바탕으로 지식 즉 모델(Model, M)을 자동으로 구축하고 스스로 성능(Performance, P)을 향상하는 시스템(Mitchell, 1997)
 
@@ -46,7 +46,7 @@
 
 
 
-#### [딥러닝이란?](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DL.md)
+#### [딥러닝이란?](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/DL/TensorFlow.md)
 
 - 딥 러닝은 **머신 러닝의 한 방법**으로, 학습 과정 동안 인공 신경망으로서 예시 데이터에서 얻은 일반적인 규칙을 독립적으로 구축(훈련)한다. 특히 머신 비전 분야에서 신경망은 일반적으로 데이터와 예제 데이터에 대한 사전 정의된 결과와 같은 지도 학습을 통해 학습된다.
 

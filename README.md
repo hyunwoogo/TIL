@@ -43,6 +43,9 @@
   >- [KNN(K-Nearest Neighbor)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/KNN.md)
   >- [SVM(Support Vector Machine)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/SVM.md)
   >- [DecisionTree](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/DecisionTree.md)
+  >- [앙상블학습(Ensemble Learning)](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/Ensemble_Learning.md)
+  >- [Boosting](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/Boosting.md)
+  >- [RandomForest](https://github.com/hyunwoogo/TIL/blob/master/ML_DL/ML/RandomForest.md)
 
 - Deep Learning
 
