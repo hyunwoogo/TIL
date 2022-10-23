@@ -198,7 +198,7 @@
 
      - 출력값
 
-     ![image-20220320213210669](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220320213210669.png)
+     ![image-20220320213210669](try_except.assets\image-20220320213210669.png)
 
 - 번외) 에러 종류를 확인하는 코드
 
