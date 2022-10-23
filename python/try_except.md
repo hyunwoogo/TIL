@@ -220,4 +220,4 @@ except:
 
 - 출력값
 
-![image-20220320213508280](C:\Users\GHW\AppData\Roaming\Typora\typora-user-images\image-20220320213508280.png)
+![image-20220320213508280](try_except.assets\image-20220320213508280.png)
