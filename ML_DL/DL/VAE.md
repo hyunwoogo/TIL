@@ -42,7 +42,7 @@
 
     ![image-20221011205513590](VAE.assets/image-20221011205513590.png)
 
-    ![image-20221011205527354](DL.assets/image-20221011205527354.png)
+    ![image-20221011205527354](VAE.assets/image-20221011205527354.png)
 
 - Variational Autoencoder
 
